@@ -9,10 +9,10 @@ export class Player extends CharacterBase {
    * @param {number} y - Y 座標
    * @param {Image} image - キャラクターの画像
    */
-  constructor(ctx, x, y, image) {
+  constructor(ctx, x, y, w, h, image) {
     // Character クラスのコンストラクタを呼び出し初期化
     // constructor(ctx, x, y, life, image)
-    super(ctx, x, y, 0, image);
+    super(ctx, x, y, w, h, 0, image);
 
     /**
      * viper が登場中かどうかを表すフラグ
