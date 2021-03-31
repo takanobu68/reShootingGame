@@ -76,6 +76,20 @@ export class Player extends CharacterBase {
       if (justTime % 100 < 50) {
         this.ctx.globalAlpha = 0.5;
       }
+    } else {
+      // キーの押下状態を調べて挙動を変える
+      if (window.isKeyDown.key_ArrowLeft === true) {
+        this.position.x -= this.speed; // アローキーの左
+      }
+      if (window.isKeyDown.key_ArrowRight === true) {
+        this.position.x += this.speed; // アローキーの右
+      }
+      if (window.isKeyDown.key_ArrowUp === true) {
+        this.position.y -= this.speed; // アローキーの上
+      }
+      if (window.isKeyDown.key_ArrowDown === true) {
+        this.position.y += this.speed; // アローキーの下
+      }
     }
     // 自機キャラクターを描画する
     this.draw();
