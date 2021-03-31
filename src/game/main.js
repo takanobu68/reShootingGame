@@ -1,4 +1,4 @@
-import { Canvas2D } from "../common/Canvas2D.js";
+import { Canvas2D } from "./common/Canvas2D.js";
 
 export function createGame() {
   /**
@@ -102,7 +102,7 @@ export function createGame() {
   function render() {
     util.drawRect(0, 0, canvas.width, canvas.height, "#000");
     // 画像を描画する
-    ctx.drawImage(image, 0, playerY);
+    ctx.drawImage(image, playerX, playerY);
     // 描画処理を再帰呼出しする
     requestAnimationFrame(render);
   }
