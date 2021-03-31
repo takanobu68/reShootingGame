@@ -34,6 +34,16 @@ export function createGame() {
    * @type {number}
    */
   let startTime;
+  /**
+   * player の X 座標
+   * @type {number}
+   */
+  let playerX = GAME_CONTAINER.clientWidth / 2;
+  /**
+   * player の Y 座標
+   * @type {number}
+   */
+  let playerY = GAME_CONTAINER.clientHeight / 2;
 
   // Canvas2Dクラスの初期化
   util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
