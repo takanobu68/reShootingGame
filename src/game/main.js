@@ -114,28 +114,7 @@ export function createGame() {
     ctx.globalAlpha = 1.0;
     util.drawRect(0, 0, canvas.width, canvas.height, "#000");
 
-    // 登場シーンの処理
-    if (player.isComing === true) {
-      // 登場シーンが始まってからの経過時間
-      let justTime = Date.now();
-      let comingTime = (justTime - player.comingStart) / 1000;
-      // 登場中は時間が経つほど右に向かって進む
-      let x = -100 + comingTime * 50;
-      // 一定の位置まで移動したら登場シーンを終了する
-      if (x >= player.comingEndPosition.x) {
-        player.isComing = false; // 登場シーンフラグを下ろす
-        x = player.comingEndPosition.x; // 行き過ぎの可能性もあるので位置を再設定
-      }
-      // 求めたX座標を自機に設定する
-      player.position.set(x, player.position.y);
-      // justTime を 100 で割ったとき余りが 50 より小さくなる場合だけ半透明にする
-      if (justTime % 100 < 50) {
-        ctx.globalAlpha = 0.5;
-      }
-    }
-
-    // 画像を描画する
-    player.draw();
+    player.update();
     // 描画処理を再帰呼出しする
     requestAnimationFrame(render);
   }
