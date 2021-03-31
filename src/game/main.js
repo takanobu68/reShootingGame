@@ -6,8 +6,8 @@ export function createGame() {
    * game-canvas
    * ゲーム画面のwidth,height,2dコンテキスト取得の為に必要な要素を取得
    */
-  const gameContainer = document.getElementById("game-container");
-  const gameCanvas = document.getElementById("game-canvas");
+  const GAME_CONTAINER = document.getElementById("game-container");
+  const GAME_CANVAS = document.getElementById("game-canvas");
 
   /**
    * Canvas2D API をラップしたユーティリティクラス
@@ -31,7 +31,7 @@ export function createGame() {
   let image;
 
   // Canvas2Dクラスの初期化
-  util = new Canvas2D(gameContainer, gameCanvas);
+  util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
 
   // Canvas2Dからwidthとheightを設定したcanvasを取得
   canvas = util.canvas;
