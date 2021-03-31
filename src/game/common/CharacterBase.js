@@ -1,6 +1,6 @@
 import { Vector2 } from "./Vector2.js";
 
-export class CharactorBase {
+export class CharacterBase {
   /**
    * @constructor
    * @param {CanvasRenderingContext2D} ctx - 描画などに利用する 2D コンテキスト
