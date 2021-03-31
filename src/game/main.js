@@ -87,10 +87,15 @@ export function createGame() {
       }
     });
   }
+
+  /**
+   * 描画処理を行う関数を定義
    */
   function render() {
     util.drawRect(0, 0, canvas.width, canvas.height, "#000");
     // 画像を描画する
-    ctx.drawImage(image, 0, 0);
+    ctx.drawImage(image, 0, playerY);
+    // 描画処理を再帰呼出しする
+    requestAnimationFrame(render);
   }
 }
