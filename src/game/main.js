@@ -57,13 +57,21 @@ export function createGame() {
   util.imageLoader("../../assets/images/player.png", (loadedImage) => {
     // 引数経由で画像を受け取り変数に代入しておく
     image = loadedImage;
-
+    // 初期化処理を行う
+    initialize();
+    // イベントを設定する
+    eventSetting();
+    // 実行開始時のタイムスタンプを取得する
+    startTime = Date.now();
     // 描画処理を行う
     render();
   });
 
   /**
-   * 描画処理を行う関数
+   * 初期化関数
+   */
+  function initialize() {}
+
   /**
    * イベントを設定する関数を定義
    */
