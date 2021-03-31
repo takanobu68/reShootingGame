@@ -14,17 +14,14 @@ export class CharacterBase {
      * @type {CanvasRenderingContext2D}
      */
     this.ctx = ctx;
-
     /**
      * @type {Position}
      */
     this.position = new Vector2(x, y);
-
     /**
      * @type {number}
      */
     this.life = life;
-
     /**
      * @type {Image}
      */
@@ -35,6 +32,6 @@ export class CharacterBase {
    * キャラクターを描画する
    */
   draw() {
-    this.ctx.drawImage(this.image, this.x, this.y);
+    this.ctx.drawImage(this.image, this.position.x, this.position.y);
   }
 }
