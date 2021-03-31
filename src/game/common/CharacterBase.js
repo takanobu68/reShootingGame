@@ -47,12 +47,13 @@ export class CharacterBase {
    */
   draw() {
     // キャラクターの幅を考慮してオフセットする量
+    const offsetX = this.width / 2;
     const offsetY = this.height / 2;
 
     // キャラクターの幅やオフセットする量を加味して描画する
     this.ctx.drawImage(
       this.image,
-      this.position.x,
+      this.position.x - offsetX,
       this.position.y - offsetY,
       this.width,
       this.height
