@@ -29,6 +29,11 @@ export function createGame() {
    * @type {Image}
    */
   let image;
+  /**
+   * 実行開始時のタイムスタンプ
+   * @type {number}
+   */
+  let startTime;
 
   // Canvas2Dクラスの初期化
   util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
