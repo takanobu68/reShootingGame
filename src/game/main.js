@@ -64,6 +64,29 @@ export function createGame() {
 
   /**
    * 描画処理を行う関数
+  /**
+   * イベントを設定する関数を定義
+   */
+  function eventSetting() {
+    // キーの押下時に呼び出されるイベントリスナーを設定する
+    window.addEventListener("keydown", (event) => {
+      // 入力されたキーに応じて処理内容を変化させる
+      switch (event.key) {
+        case "ArrowLeft": // アローキーの左
+          playerX -= 10;
+          break;
+        case "ArrowRight": // アローキーの右
+          playerX += 10;
+          break;
+        case "ArrowUp":
+          playerY -= 10; // アローキーの上
+          break;
+        case "ArrowDown":
+          playerY += 10; // アローキーの下
+          break;
+      }
+    });
+  }
    */
   function render() {
     util.drawRect(0, 0, canvas.width, canvas.height, "#000");
