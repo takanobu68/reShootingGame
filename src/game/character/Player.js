@@ -64,7 +64,7 @@ export class Player extends CharacterBase {
       let justTime = Date.now();
       this.comingTime = (justTime - this.comingStart) / 1000;
       // 登場中は時間が経つほど右に向かって進む
-      let x = -100 + this.comingTime * 50;
+      let x = -50 + this.comingTime * 50;
       // 一定の位置まで移動したら登場シーンを終了する
       if (x >= this.comingEndPosition.x) {
         this.isComing = false; // 登場シーンフラグを下ろす
