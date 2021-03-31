@@ -93,21 +93,13 @@ export function createGame() {
   function eventSetting() {
     // キーの押下時に呼び出されるイベントリスナーを設定する
     window.addEventListener("keydown", (e) => {
-      // 入力されたキーに応じて処理内容を変化させる
-      switch (e.key) {
-        case "ArrowLeft": // アローキーの左
-          player.position.x -= 10;
-          break;
-        case "ArrowRight": // アローキーの右
-          player.position.x += 10;
-          break;
-        case "ArrowUp":
-          player.position.y -= 10; // アローキーの上
-          break;
-        case "ArrowDown":
-          player.position.y += 10; // アローキーの下
-          break;
-      }
+      // キーの押下状態を管理するオブジェクトに押下されたことを設定する
+      isKeyDown[`key_${e.key}`] = true;
+    });
+    // キーが離された時に呼び出されるイベントリスナーを設定する
+    window.addEventListener("keyup", (e) => {
+      // キーが離されたことを設定する
+      isKeyDown[`key_${e.key}`] = false;
     });
   }
 
