@@ -15,6 +15,11 @@ export function createGame() {
    ******************************************************************/
 
   /**
+   * キーの押下状態を調べるためのオブジェクト
+   */
+  window.isKeyDown = {};
+
+  /**
    * Canvas2D API をラップしたユーティリティクラス
    * @type {Canvas2DUtility}
    */
