@@ -1,4 +1,4 @@
-import { Canvas2D } from "../common/Canvas2D.js";
+import { Canvas2D } from "./common/Canvas2D.js";
 
 export function createGame() {
   /**
