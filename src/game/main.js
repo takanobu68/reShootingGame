@@ -84,7 +84,7 @@ export function createGame() {
     // 自機キャラクターを初期化する
     player = new Player(ctx, 0, 0, 64, 64, image);
 
-    player.setComing(-50, canvas.height / 2, 0, canvas.height / 2);
+    player.setComing(-50, canvas.height / 2, 32, canvas.height / 2);
   }
 
   /**
