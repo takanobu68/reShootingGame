@@ -15,15 +15,23 @@ export class Player extends CharacterBase {
     super(ctx, x, y, w, h, 0, image);
 
     /**
+     * 自身の移動スピード（update 一回あたりの移動量）
+     * @type {number}
+     */
+    this.speed = 3;
+
+    /**
      * viper が登場中かどうかを表すフラグ
      * @type {boolean}
      */
     this.isComing = false;
+
     /**
      * 登場演出を開始した際のタイムスタンプ
      * @type {number}
      */
     this.comingStart = null;
+
     /**
      * 登場演出を完了とする座標
      * @type {Position}
