@@ -18,7 +18,7 @@ export class CharacterBase {
     /**
      * @type {Position}
      */
-    this.position = new Position(x, y);
+    this.position = new Vector2(x, y);
     /**
      * @type {number}
      */
