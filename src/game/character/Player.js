@@ -48,4 +48,31 @@ export class Player extends CharacterBase {
     // 登場終了とする座標を設定する
     this.comingEndPosition = new Vector2(endX, endY);
   }
+
+  update() {
+    // 登場シーンの処理
+    if (this.isComing === true) {
+      // 登場シーンが始まってからの経過時間
+      let justTime = Date.now();
+      this.comingTime = (justTime - this.comingStart) / 1000;
+      // 登場中は時間が経つほど右に向かって進む
+      let x = -100 + this.comingTime * 50;
+      // 一定の位置まで移動したら登場シーンを終了する
+      if (x >= this.comingEndPosition.x) {
+        this.isComing = false; // 登場シーンフラグを下ろす
+        x = this.comingEndPosition.x; // 行き過ぎの可能性もあるので位置を再設定
+      }
+      // 求めたX座標を自機に設定する
+      this.position.set(x, this.position.y);
+      // justTime を 100 で割ったとき余りが 50 より小さくなる場合だけ半透明にする
+      if (justTime % 100 < 50) {
+        this.ctx.globalAlpha = 0.5;
+      }
+    }
+    // 自機キャラクターを描画する
+    this.draw();
+
+    // 念の為グローバルなアルファの状態を元に戻す
+    this.ctx.globalAlpha = 1.0;
+  }
 }
