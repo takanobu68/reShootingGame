@@ -59,7 +59,7 @@ export function createGame() {
   // Canvas2Dから2dコンテキストを取得
   ctx = util.context;
 
-  util.imageLoader("../../assets/images/viper.png", (loadedImage) => {
+  util.imageLoader("../../assets/images/player.png", (loadedImage) => {
     // 引数経由で画像を受け取り変数に代入しておく
     image = loadedImage;
     // 初期化処理を行う
