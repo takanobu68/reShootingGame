@@ -146,6 +146,30 @@ export class Player extends CharacterBase {
               break;
             }
           }
+          // slantingショットの生存を確認し非生存の物があれば生成する
+          // このとき2個をセットで生成し上下に進行方向を振り分ける
+          for (i = 0; i < this.slantingShotArray.length; i += 2) {
+            // 非生存かどうか確認する
+            if (
+              this.slantingShotArray[i].life <= 0 &&
+              this.slantingShotArray[i + 1].life <= 0
+            ) {
+              // playerキャラクターの座標にショットを生成する
+              this.slantingShotArray[i].set(this.position.x, this.position.y);
+              // 斜め上方向のショット
+              this.slantingShotArray[i].setVector(0.9, -0.3);
+              this.slantingShotArray[i + 1].set(
+                this.position.x,
+                this.position.y
+              );
+              // 斜め下方向のショット
+              this.slantingShotArray[i + 1].setVector(0.9, 0.3);
+              // ショットを生成したのでインターバルを設定する
+              this.shotCheckCounter = -this.shotInterval;
+              // 一組生成したらループを抜ける
+              break;
+            }
+          }
         }
       }
       // ショットチェック用のカウンターをインクリメントする
