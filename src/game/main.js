@@ -56,6 +56,18 @@ export function createGame() {
    */
   let player = null;
 
+  /**
+   * ショットの最大個数
+   * @type {number}
+   */
+  const SHOT_MAX_COUNT = 10;
+
+  /**
+   * ショットのインスタンスを格納する配列
+   * @type {Array<Shot>}
+   */
+  const shotArray = [];
+
   // Canvas2Dクラスの初期化
   util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
 
