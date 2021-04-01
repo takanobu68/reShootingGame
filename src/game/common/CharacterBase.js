@@ -9,7 +9,7 @@ export class CharacterBase {
    * @param {number} life - 生存フラグ
    * @param {Image} image - キャラクターの画像
    */
-  constructor(ctx, x, y, width, height, life, image) {
+  constructor(ctx, x, y, width, height, life, imagePath) {
     /**
      * @type {CanvasRenderingContext2D}
      */
