@@ -42,7 +42,13 @@ export class Player extends CharacterBase {
      * 自身が持つショットインスタンスの配列
      * @type{Array<Shot>}
      */
-    this.shotArray = null;
+    this.slantingShotArray = null;
+
+    /**
+     * 自身が持つslantingショットインスタンスの配列
+     * @type{Array<Shot>}
+     */
+    this.slantingShotArray = null;
 
     /**
      * ショットを打った後のチェック用カウンター
@@ -59,9 +65,10 @@ export class Player extends CharacterBase {
    * ショットを設定する
    * @param{Array<Shot>} - 自身に設定するショットの配列
    */
-  setShotArray(shotArray) {
+  setShotArray(shotArray, slantingShotArray) {
     // 自身のプロパティに設定する
     this.shotArray = shotArray;
+    this.slantingShotArray = slantingShotArray;
   }
 
   /**
