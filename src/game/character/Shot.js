@@ -19,7 +19,7 @@ export class Shot extends CharacterBase {
      * 自身の移動スピード(update1回あたりの移動量)
      * @type{number}
      */
-    this.speed = 7;
+    this.speed = 10;
 
     /**
      * ショットの進行方向
