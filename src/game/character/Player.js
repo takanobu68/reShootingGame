@@ -46,6 +46,15 @@ export class Player extends CharacterBase {
   }
 
   /**
+   * ショットを設定する
+   * @param{Array<Shot>} - 自身に設定するショットの配列
+   */
+  setShotArray(shotArray) {
+    // 自身のプロパティに設定する
+    this.shotArray = shotArray;
+  }
+
+  /**
    * 登場演出に関する設定を行う
    * @param {number} startX - 登場開始時の X 座標
    * @param {number} startY - 登場開始時の Y 座標
