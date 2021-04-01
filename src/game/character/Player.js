@@ -134,6 +134,8 @@ export class Player extends CharacterBase {
         // ショットを打てる状態なのか確認する
         // ショットチェック用カウンターが0以上ならショットを生成できる
         if (this.shotCheckCounter >= 0) {
+          // iを何度も使用する為あらかじめっ初期化する
+          let i;
           // ショットの生存を確認し非生存の物があれば生成する
           for (let i = 0; i < this.shotArray.length; i++) {
             if (this.shotArray[i].life <= 0) {
