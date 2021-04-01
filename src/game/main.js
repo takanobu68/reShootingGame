@@ -151,8 +151,23 @@ export function createGame() {
     ctx.globalAlpha = 1.0;
     util.drawRect(0, 0, canvas.width, canvas.height, "#000");
 
+    // playerの状態を更新
     player.update();
+
+    // ショットの状態を更新
+    statusUpdate(shotArray);
+
     // 描画処理を再帰呼出しする
     requestAnimationFrame(render);
+  }
+
+  /**
+   * 配列の個別の要素にupdateをかける際に使用する関数
+   * @param {Array} targetArray
+   */
+  function statusUpdate(targetArray) {
+    targetArray.forEach((target) => {
+      target.update();
+    });
   }
 }
