@@ -1,5 +1,5 @@
 import { Vector2 } from "../common/Vector2.js";
-import { CharacterBase } from "../common/CharacterBase.js}";
+import { CharacterBase } from "../common/CharacterBase.js";
 
 export class Shot extends CharacterBase {
   /**
