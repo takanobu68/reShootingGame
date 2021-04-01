@@ -11,9 +11,9 @@ export class Shot extends CharacterBase {
    * @param {number} h
    * @param {image} image
    */
-  constructor(ctx, x, y, w, h, image) {
+  constructor(ctx, x, y, w, h, imagePath) {
     // 継承元の初期化
-    super(ctx, x, y, w, h, 0, image);
+    super(ctx, x, y, w, h, 0, imagePath);
     /**
      * 自身の移動スピード(update1回あたりの移動量)
      * @type{number}
@@ -34,7 +34,7 @@ export class Shot extends CharacterBase {
   }
 
   /**
-   * キャラクターの状態を更新し描画も行う
+   * キャラクターの状態を更新し、描画も行う
    */
   update() {
     // もしショットのライフが0以下の場合、何もしない
