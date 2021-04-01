@@ -39,12 +39,6 @@ export function createGame() {
   let ctx;
 
   /**
-   * イメージのインスタンス
-   * @type {Image}
-   */
-  let image;
-
-  /**
    * 実行開始時のタイムスタンプ
    * @type {number}
    */
@@ -77,18 +71,6 @@ export function createGame() {
   // Canvas2Dから2dコンテキストを取得
   ctx = util.context;
 
-  util.imageLoader("../../assets/images/player.png", (loadedImage) => {
-    // 引数経由で画像を受け取り変数に代入しておく
-    image = loadedImage;
-    // 初期化処理を行う
-    initialize();
-    // イベントを設定する
-    eventSetting();
-    // 実行開始時のタイムスタンプを取得する
-    startTime = Date.now();
-    // 描画処理を行う
-    render();
-  });
 
   /**
    * 初期化関数
