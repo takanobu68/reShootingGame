@@ -130,9 +130,9 @@ export function createGame() {
     // playerの準備が完了しているかチェック
     ready = ready && player.ready;
     // shotの準備が完了しているかチェック
-    shotArray.forEach((shot) => {
-      ready = ready && shot.ready;
-    });
+    checkReadiness(shotArray, ready);
+    // slantingShotの準備が完了しているかチェック
+    checkReadiness(slantingShotArray, ready);
 
     // 全ての準備が完了したら次の処理に進む
     if (ready) {
