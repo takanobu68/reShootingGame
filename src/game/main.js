@@ -1,5 +1,6 @@
 import { Canvas2D } from "./common/Canvas2D.js";
 import { Player } from "./character/Player.js";
+import { Shot } from "./character/Shot.js";
 
 export function createGame() {
   /**
