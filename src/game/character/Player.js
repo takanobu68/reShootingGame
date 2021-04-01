@@ -37,6 +37,12 @@ export class Player extends CharacterBase {
      * @type {Position}
      */
     this.comingEndPosition = null;
+
+    /**
+     * 自身が持つショットインスタンスの配列
+     * @type{Array<Shot>}
+     */
+    this.shotArray = null;
   }
 
   /**
