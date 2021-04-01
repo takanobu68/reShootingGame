@@ -137,7 +137,7 @@ export class Player extends CharacterBase {
           // iを何度も使用する為あらかじめっ初期化する
           let i;
           // ショットの生存を確認し非生存の物があれば生成する
-          for (let i = 0; i < this.shotArray.length; i++) {
+          for (i = 0; i < this.shotArray.length; i++) {
             if (this.shotArray[i].life <= 0) {
               this.shotArray[i].set(this.position.x, this.position.y);
               // ショットを生成したのでインターバルを設定する
