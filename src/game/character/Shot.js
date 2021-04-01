@@ -62,8 +62,11 @@ export class Shot extends CharacterBase {
     if (this.position.x + this.width > this.ctx.canvas.width) {
       this.life = 0;
     }
-    // ショットを右に向かって移動させる
-    this.position.x += this.speed;
+
+    // ショットを進行方向に沿って移動させる
+    this.position.x += this.vector.x * this.speed;
+    this.position.y += this.vector.y * this.speed;
+
     // ショットを描画する
     this.draw();
   }
