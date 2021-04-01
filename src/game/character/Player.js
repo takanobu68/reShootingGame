@@ -18,7 +18,7 @@ export class Player extends CharacterBase {
      * 自身の移動スピード（update 一回あたりの移動量）
      * @type {number}
      */
-    this.speed = 3;
+    this.speed = 7;
 
     /**
      * viper が登場中かどうかを表すフラグ
@@ -157,13 +157,13 @@ export class Player extends CharacterBase {
               // playerキャラクターの座標にショットを生成する
               this.slantingShotArray[i].set(this.position.x, this.position.y);
               // 斜め上方向のショット
-              this.slantingShotArray[i].setVector(0.9, -0.3);
+              this.slantingShotArray[i].setVector(1.0, -0.3);
               this.slantingShotArray[i + 1].set(
                 this.position.x,
                 this.position.y
               );
               // 斜め下方向のショット
-              this.slantingShotArray[i + 1].setVector(0.9, 0.3);
+              this.slantingShotArray[i + 1].setVector(1.0, 0.3);
               // ショットを生成したのでインターバルを設定する
               this.shotCheckCounter = -this.shotInterval;
               // 一組生成したらループを抜ける
