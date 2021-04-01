@@ -37,9 +37,19 @@ export class CharacterBase {
     this.life = life;
 
     /**
+     * @type{boolean}
+     */
+    this.ready = false;
+
+    /**
      * @type {Image}
      */
-    this.image = image;
+    this.image = new Image();
+    this.image.addEventLister("load", () => {
+      // 画像のロードが完了したら準備完了フラグを立てる
+      this.ready = true;
+    });
+    this.image.src = imagePath;
   }
 
   /**
