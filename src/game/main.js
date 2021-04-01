@@ -101,10 +101,26 @@ export function createGame() {
         32,
         "../../assets/images/shoot.png"
       );
+      slantingShotArray[i * 2] = new Shot(
+        ctx,
+        0,
+        0,
+        32,
+        32,
+        "../../assets/images/pwupshoot.png"
+      );
+      slantingShotArray[i * 2 + 1] = new Shot(
+        ctx,
+        0,
+        0,
+        32,
+        32,
+        "../../assets/images/pwupshoot.png"
+      );
     }
 
     // playerにショットを設定する
-    player.setShotArray(shotArray);
+    player.setShotArray(shotArray, slantingShotArray);
   }
 
   // 画像のロードが完了しているかを確認
