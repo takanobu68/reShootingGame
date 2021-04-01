@@ -45,7 +45,7 @@ export class CharacterBase {
      * @type {Image}
      */
     this.image = new Image();
-    this.image.addEventLister("load", () => {
+    this.image.addEventListener("load", () => {
       // 画像のロードが完了したら準備完了フラグを立てる
       this.ready = true;
     });
