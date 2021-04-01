@@ -110,6 +110,9 @@ export function createGame() {
         "../../assets/images/shoot.png"
       );
     }
+
+    // playerにショットを設定する
+    player.setShotArray(shotArray);
   }
 
   /**
