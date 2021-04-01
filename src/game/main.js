@@ -178,12 +178,29 @@ export function createGame() {
     // ショットの状態を更新
     statusUpdate(shotArray);
 
+    // 斜め方向のショットの状態を更新
+    statusUpdate(slantingShotArray);
+
     // 描画処理を再帰呼出しする
     requestAnimationFrame(render);
   }
 
   /**
+   * 配列の個別の要素のreadyがtrueになっているか調べる関数
+   * loadCheck関数内で使用
+   * @param {Array} targetArray
+   * @param {boolean} ready
+   */
+  function checkReadiness(targetArray, ready) {
+    targetArray.forEach((target) => {
+      ready = ready && target.ready;
+    });
+    return ready;
+  }
+
+  /**
    * 配列の個別の要素にupdateをかける際に使用する関数
+   * render関数内で使用
    * @param {Array} targetArray
    */
   function statusUpdate(targetArray) {
