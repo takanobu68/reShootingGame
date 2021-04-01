@@ -71,6 +71,11 @@ export function createGame() {
   // Canvas2Dから2dコンテキストを取得
   ctx = util.context;
 
+  // 初期化処理を行う
+  initialize();
+
+  // インスタンスの状態を確認する
+  loadCheck();
 
   /**
    * 初期化関数
@@ -95,6 +100,31 @@ export function createGame() {
 
     // playerにショットを設定する
     player.setShotArray(shotArray);
+  }
+
+  // 画像のロードが完了しているかを確認
+  function loadCheck() {
+    // 準備完了を意味する真偽値
+    let ready = true;
+    // playerの準備が完了しているかチェック
+    ready = ready && player.ready;
+    // shotの準備が完了しているかチェック
+    shotArray.forEach((shot) => {
+      ready = ready && shot.ready;
+    });
+
+    // 全ての準備が完了したら次の処理に進む
+    if (ready) {
+      // イベントを設定する
+      eventSetting();
+      // 実行開始時のタイムスタンプを取得する
+      startTime = Date.now();
+      // 描画処理を行う
+      render();
+    } else {
+      // 準備が完了していない場合は0.1秒ごとに再帰呼び出しを行う
+      setTimeout(loadCheck, 100);
+    }
   }
 
   /**
