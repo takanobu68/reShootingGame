@@ -62,6 +62,11 @@ export function createGame() {
    */
   const shotArray = [];
 
+  /**
+   * 斜めショットのインスタンスを格納する配列
+   */
+  const slantingShotArray = [];
+
   // Canvas2Dクラスの初期化
   util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
 
