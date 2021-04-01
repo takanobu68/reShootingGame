@@ -43,6 +43,16 @@ export class Player extends CharacterBase {
      * @type{Array<Shot>}
      */
     this.shotArray = null;
+
+    /**
+     * ショットを打った後のチェック用カウンター
+     */
+    this.shotCheckCounter = 0;
+
+    /**
+     * ショットを打つことができる間隔(フレーム数を基準とする)
+     */
+    this.shotInterval = 10;
   }
 
   /**
