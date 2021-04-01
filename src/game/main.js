@@ -99,7 +99,7 @@ export function createGame() {
         0,
         32,
         32,
-        "../../assets/images/shoot.png"
+        "../../assets/images/DRshoot.png"
       );
       slantingShotArray[i * 2] = new Shot(
         ctx,
