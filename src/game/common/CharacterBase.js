@@ -25,12 +25,12 @@ export class CharacterBase {
     /**
      * @type{number}
      */
-    this.width = width;
+    this.width = w;
 
     /**
      * @type {number}
      */
-    this.height = height;
+    this.height = h;
 
     /**
      *
