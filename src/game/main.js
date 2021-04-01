@@ -98,6 +98,18 @@ export function createGame() {
     player = new Player(ctx, 0, 0, 64, 64, "../../assets/images/player.png");
 
     player.setComing(-50, canvas.height / 2, 32, canvas.height / 2);
+
+    // ショットを初期化する;
+    for (let i = 0; i < SHOT_MAX_COUNT; ++i) {
+      shotArray[i] = new Shot(
+        ctx,
+        0,
+        0,
+        32,
+        32,
+        "../../assets/images/shoot.png"
+      );
+    }
   }
 
   /**
