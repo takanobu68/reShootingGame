@@ -6,10 +6,12 @@ export class CharacterBase {
    * @param {CanvasRenderingContext2D} ctx - 描画などに利用する 2D コンテキスト
    * @param {number} x - X 座標
    * @param {number} y - Y 座標
-   * @param {number} life - 生存フラグ
-   * @param {Image} image - キャラクターの画像
+   * @param {number} w - 幅
+   * @param {number} h - 高さ
+   * @param {number} life - キャラクターのライフ（生存フラグを兼ねる）
+   * @param {string} imagePath - キャラクター用の画像のパス
    */
-  constructor(ctx, x, y, width, height, life, imagePath) {
+  constructor(ctx, x, y, w, h, life, imagePath) {
     /**
      * @type {CanvasRenderingContext2D}
      */
