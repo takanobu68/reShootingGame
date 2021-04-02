@@ -146,6 +146,19 @@ export function createGame() {
 
     // playerにショットを設定する
     player.setShotArray(shotArray, slantingShotArray);
+
+    // 流れる星を初期化する
+    for (i = 0; i < BACKGROUND_STAR_MAX_COUNT; ++i) {
+      // 星の速度と大きさはランダムと最大値によって決まるようにする
+      let size = 1 + Math.random() * (BACKGROUND_STAR_MAX_SIZE - 1);
+      let speed = 1 + Math.random() * (BACKGROUND_STAR_MAX_SPEED - 1);
+      // 星のインスタンスを生成する
+      backgroundStarArray[i] = new BackgroundStar(ctx, size, speed);
+      // 星の初期位置もランダムに決まるようにする
+      let x = Math.random() * canvas.width;
+      let y = Math.random() * canvas.height;
+      backgroundStarArray[i].set(x, y);
+    }
   }
 
   // 画像のロードが完了しているかを確認
@@ -205,6 +218,9 @@ export function createGame() {
 
     // 斜め方向のショットの状態を更新
     statusUpdate(slantingShotArray);
+
+    // 流れる星の状態を更新する
+    statusUpdate(backgroundStarArray);
 
     // 描画処理を再帰呼出しする
     requestAnimationFrame(render);
