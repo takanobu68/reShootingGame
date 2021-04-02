@@ -109,13 +109,15 @@ export function createGame() {
    * 初期化関数
    */
   function initialize() {
+    let i;
+
     // 自機キャラクターを初期化する
     player = new Player(ctx, 0, 0, 64, 64, "../../assets/images/player.png");
 
     player.setComing(-50, canvas.height / 2, 32, canvas.height / 2);
 
     // ショットを初期化する;
-    for (let i = 0; i < SHOT_MAX_COUNT; ++i) {
+    for (i = 0; i < SHOT_MAX_COUNT; ++i) {
       shotArray[i] = new Shot(
         ctx,
         0,
