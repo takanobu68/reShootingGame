@@ -1,6 +1,7 @@
 import { Canvas2D } from "./common/Canvas2D.js";
 import { Player } from "./character/Player.js";
 import { Shot } from "./character/Shot.js";
+import { BackgroundStar } from "./character/BackgroundStar.js";
 
 export function createGame() {
   /**
@@ -66,6 +67,28 @@ export function createGame() {
    * 斜めショットのインスタンスを格納する配列
    */
   const slantingShotArray = [];
+
+  /**
+   * 流れる星のインスタンスを格納する配列
+   * @type {Array<BackgroundStar>}
+   */
+  let backgroundStarArray = [];
+
+  /**
+   * 背景を流れる星の個数
+   * @type {number}
+   */
+  const BACKGROUND_STAR_MAX_COUNT = 100;
+  /**
+   * 背景を流れる星の最大サイズ
+   * @type {number}
+   */
+  const BACKGROUND_STAR_MAX_SIZE = 3;
+  /**
+   * 背景を流れる星の最大速度
+   * @type {number}
+   */
+  const BACKGROUND_STAR_MAX_SPEED = 4;
 
   // Canvas2Dクラスの初期化
   util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
