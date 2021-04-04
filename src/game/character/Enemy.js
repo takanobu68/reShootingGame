@@ -66,6 +66,28 @@ export class Enemy extends CharacterBase {
   }
 
   /**
+   * 自身から指定された方向にショットを放つ
+   * @param{number}[x=-1.0] - 進行方向のX要素
+   * @param{number}[y=0.0] - 進行方向のY要素
+   */
+  fire(x = -1.0, y = 0.0) {
+    // ショットの生存を確認し非生存のものがあれば生成する
+    for (let i = 0; i < this.shotArray.length; i++) {
+      // 非生存かどうか確認する
+      if (this.shotArray[i].life <= 0) {
+        // 敵キャラクターの座標にショットを生成する
+        this.shotArray[i].set(this.position.x, this.position.y);
+        // ショットのスピードを設定する
+        this.shotArray[i].setSpeed(10.0);
+        // ショットの進行方向を設定する
+        this.shotArray[i].setVector(x, y);
+        // 1つ生成したらループを抜ける
+        break;
+      }
+    }
+  }
+
+  /**
    * キャラクターの状態を更新し描画を行う
    */
   update() {
