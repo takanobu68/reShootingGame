@@ -287,6 +287,9 @@ export function createGame() {
     // playerの状態を更新
     player.update();
 
+    // sceneを更新する
+    scene.update();
+
     // ショットの状態を更新
     statusUpdate(shotArray);
 
