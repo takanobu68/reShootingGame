@@ -160,6 +160,18 @@ export function createGame() {
     // playerにショットを設定する
     player.setShotArray(shotArray, slantingShotArray);
 
+    // 敵キャラクターを初期化する
+    for (i = 0; i < EMEMY_MAX_COUNT; i++) {
+      enemyArray[i] = new Enemy(
+        ctx,
+        0,
+        0,
+        48,
+        48,
+        "../../assets/images/Bbug2.png"
+      );
+    }
+
     // 流れる星を初期化する
     for (i = 0; i < BACKGROUND_STAR_MAX_COUNT; ++i) {
       // 星の速度と大きさはランダムと最大値によって決まるようにする
