@@ -3,6 +3,7 @@ import { Player } from "./character/Player.js";
 import { Shot } from "./character/Shot.js";
 import { BackgroundStar } from "./character/BackgroundStar.js";
 import { Enemy } from "./character/Enemy.js";
+import { SceneManager } from "./common/SceneManager.js";
 
 export function createGame() {
   /**
@@ -102,6 +103,12 @@ export function createGame() {
    * @type {number}
    */
   const BACKGROUND_STAR_MAX_SPEED = 4;
+
+  /**
+   * シーンマネージャー
+   * @type{SceneManager}
+   */
+  let scene;
 
   // Canvas2Dクラスの初期化
   util = new Canvas2D(GAME_CONTAINER, GAME_CANVAS);
