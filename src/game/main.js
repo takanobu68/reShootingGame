@@ -196,6 +196,8 @@ export function createGame() {
     checkReadiness(shotArray, ready);
     // slantingShotの準備が完了しているかチェック
     checkReadiness(slantingShotArray, ready);
+    // 敵キャラクターの準備が完了しているかチェックする
+    checkReadiness(enemyArray, ready);
 
     // 全ての準備が完了したら次の処理に進む
     if (ready) {
