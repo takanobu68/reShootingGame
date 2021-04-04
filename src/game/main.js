@@ -2,6 +2,7 @@ import { Canvas2D } from "./common/Canvas2D.js";
 import { Player } from "./character/Player.js";
 import { Shot } from "./character/Shot.js";
 import { BackgroundStar } from "./character/BackgroundStar.js";
+import { Enemy } from "./character/Enemy.js";
 
 export function createGame() {
   /**
@@ -67,6 +68,18 @@ export function createGame() {
    * 斜めショットのインスタンスを格納する配列
    */
   const slantingShotArray = [];
+
+  /**
+   * 敵キャラクターのインスタンス数
+   * @type{number}
+   */
+  const EMEMY_MAX_COUNT = 10;
+
+  /**
+   * 敵キャラクターのインスタンスを格納する配列
+   * @type{Array<Enemy>}
+   */
+  const enemyArray = [];
 
   /**
    * 流れる星のインスタンスを格納する配列
