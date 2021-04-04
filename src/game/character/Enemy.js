@@ -19,6 +19,12 @@ export class Enemy extends CharacterBase {
      * @type {number}
      */
     this.speed = 5;
+
+    /**
+     * ショットを格納する配列
+     * @type {Array<Shot>}
+     */
+    this.shotArray = null;
   }
 
   /**
@@ -32,6 +38,15 @@ export class Enemy extends CharacterBase {
     this.position.set(x, y);
     // 敵キャラクターのライフを0より大きい値(生存の状態)にする
     this.life = life;
+  }
+
+  /**
+   * ショットを設定する
+   * @param{Array<Shot>} - 自身に設定するショットの配列
+   */
+  setShotArray(shotArray) {
+    // 自身のプロパティに設定する
+    this.shotArray = shotArray;
   }
 
   /**
