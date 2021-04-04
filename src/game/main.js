@@ -233,6 +233,8 @@ export function createGame() {
     checkReadiness(slantingShotArray, ready);
     // 敵キャラクターの準備が完了しているかチェックする
     checkReadiness(enemyArray, ready);
+    // 敵キャラクターのショットの準備が完了しているかチェック
+    checkReadiness(enemyShotArray, ready);
 
     // 全ての準備が完了したら次の処理に進む
     if (ready) {
@@ -326,6 +328,9 @@ export function createGame() {
 
     // 敵キャラクターの状態を更新
     statusUpdate(enemyArray);
+
+    // 敵キャラクターのショットの状態を更新する
+    statusUpdate(enemyShotArray);
 
     // 流れる星の状態を更新する
     statusUpdate(backgroundStarArray);
