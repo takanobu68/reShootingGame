@@ -45,11 +45,15 @@ export class Enemy extends CharacterBase {
    * @param {number} y - 配置する Y 座標
    * @param {number} [life=1] - 設定するライフ
    */
-  set(x, y, life = 1) {
+  set(x, y, life = 1, type = "default") {
     // 登場開始位置に敵キャラクターを移動させる
     this.position.set(x, y);
     // 敵キャラクターのライフを0より大きい値(生存の状態)にする
     this.life = life;
+    // 敵キャラクターのタイプを設定する
+    this.type = type;
+    // 敵キャラクターのフレームを設定する
+    this.frame = 0;
   }
 
   /**
