@@ -203,6 +203,8 @@ export function createGame() {
         48,
         "../../assets/images/Bbug2.png"
       );
+      // 敵キャラクターは全て同じショットを共有するのでここで与えておく
+      enemyArray[i].setShotArray(enemyShotArray);
     }
 
     // 流れる星を初期化する
