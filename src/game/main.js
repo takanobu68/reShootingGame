@@ -255,21 +255,24 @@ export function createGame() {
 
     // invadeシーン
     scene.add("invade", (time) => {
-      // シーンのフレーム数が0の時以外は即座に終了する
-      if (scene.frame !== 0) {
-        return;
-      }
-      // ライフが0の状態の敵キャラクターが見つかったら配置する
-      for (let i = 0; i < EMEMY_MAX_COUNT; i++) {
-        if (enemyArray[i].life <= 0) {
-          let e = enemyArray[i];
-          // 出現場所はXが画面右端の外側、Yが画面中央に設定する
-          e.set(canvas.width + e.width, canvas.height / 2);
-          // 進行方向は左に向かうように設定する
-          e.setVector(-1.0, 0.0);
-          // 処理を終了する
-          break;
+      // シーンのフレーム数が0のときは敵キャラクターを配置する
+      if (scene.frame === 0) {
+        // ライフが0の状態の敵キャラクターが見つかったら配置する
+        for (let i = 0; i < EMEMY_MAX_COUNT; i++) {
+          if (enemyArray[i].life <= 0) {
+            let e = enemyArray[i];
+            // 出現場所はXが画面右端の外側、Yが画面中央に設定する
+            e.set(canvas.width + e.width, canvas.height / 2, 1, "default");
+            // 進行方向は左に向かうように設定する
+            e.setVector(-1.0, 0.0);
+            // 処理を終了する
+            break;
+          }
         }
+      }
+      // シーンフレーム数が100になったときに再度invadeを設定する
+      if (scene.frame === 100) {
+        scene.use("invade");
       }
     });
     // 最初にシーンにはintroを設定する
