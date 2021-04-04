@@ -41,6 +41,17 @@ export class Shot extends CharacterBase {
   }
 
   /**
+   * ショットのスピードを設定する
+   * @param{number} [speed] - 設定する
+   */
+  setSpeed(speed) {
+    // もしスピード引数が有効なら設定する
+    if (speed !== null && speed > 0) {
+      this.speed = speed;
+    }
+  }
+
+  /**
    * ショットの進行方向を設定する
    * @param {number} x - X 方向の移動量
    * @param {number} y - Y 方向の移動量
