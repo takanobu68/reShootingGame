@@ -246,6 +246,9 @@ export function createGame() {
     // 斜め方向のショットの状態を更新
     statusUpdate(slantingShotArray);
 
+    // 敵キャラクターの状態を更新
+    statusUpdate(enemyArray);
+
     // 流れる星の状態を更新する
     statusUpdate(backgroundStarArray);
 
