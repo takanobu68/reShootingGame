@@ -95,14 +95,28 @@ export class Enemy extends CharacterBase {
     if (this.life <= 0) {
       return;
     }
-    // もし敵キャラクターが画面外(画面左端)へ移動していたらライフを0(非生存の状態)にする
-    if (this.position.x + this.width <= 0) {
-      this.life = 0;
+
+    // タイプに応じて挙動を変える
+    // タイプに応じてライフを0にする条件も変える
+    switch (this.type) {
+      case "default":
+      default:
+        // 配置後のフレームが50のときにショットを放つ
+        if (this.frame === 50) {
+          this.fire();
+        }
+        // 敵キャラクターを進行方向に沿って移動させる
+        this.position.x += this.vector.x * this.speed;
+        this.position.y += this.vector.y * this.speed;
+        // もし敵キャラクターが画面外(画面左端)へ移動していたらライフを0(非生存の状態)にする
+        if (this.position.x + this.width <= 0) {
+          this.life = 0;
+        }
+        break;
     }
-    // 敵キャラクターを進行方向に沿って移動させる
-    this.position.x += this.vector.x * this.speed;
-    this.position.y += this.vector.y * this.speed;
     // 描画を行う
     this.draw();
+    // 自身のフレームをインクリメントする
+    this.frame++;
   }
 }
