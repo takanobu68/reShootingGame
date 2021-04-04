@@ -23,6 +23,11 @@ export class CharacterBase {
     this.position = new Vector2(x, y);
 
     /**
+     * @type {Position}
+     */
+    this.vector = new Vector2(0.0, 0.0);
+
+    /**
      * @type{number}
      */
     this.width = w;
@@ -52,6 +57,16 @@ export class CharacterBase {
       this.ready = true;
     });
     this.image.src = imagePath;
+  }
+
+  /**
+   * 進行方向を設定する
+   * @param {number} x - X 方向の移動量
+   * @param {number} y - Y 方向の移動量
+   */
+  setVector(x, y) {
+    // 自身の vector プロパティに設定する
+    this.vector.set(x, y);
   }
 
   /**
