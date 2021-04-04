@@ -240,6 +240,41 @@ export function createGame() {
   }
 
   /**
+   * シーンを設定する
+   */
+  function sceneSetting() {
+    // イントロシーン
+    scene.add("intro", (time) => {
+      // 2秒経過したらシーンをinvadeに変更する
+      if (time > 2.0) {
+        scene.use("invade");
+      }
+    });
+
+    // invadeシーン
+    scene.add("invade", (time) => {
+      // シーンのフレーム数が0の時以外は即座に終了する
+      if (scene.frame !== 0) {
+        return;
+      }
+      // ライフが0の状態の敵キャラクターが見つかったら配置する
+      for (let i = 0; i < EMEMY_MAX_COUNT; i++) {
+        if (enemyArray[i].life <= 0) {
+          let e = enemyArray[i];
+          // 出現場所はXが画面右端の外側、Yが画面中央に設定する
+          e.set(canvas.width + e.width, canvas.height / 2);
+          // 進行方向は左に向かうように設定する
+          e.setVector(-1.0, 0.0);
+          // 処理を終了する
+          break;
+        }
+      }
+    });
+    // 最初にシーンにはintroを設定する
+    scene.use("intro");
+  }
+
+  /**
    * 描画処理を行う関数を定義
    */
   function render() {
