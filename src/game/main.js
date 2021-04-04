@@ -83,6 +83,18 @@ export function createGame() {
   const enemyArray = [];
 
   /**
+   * 敵キャラクターのショットの最大個数
+   * @type {number}
+   */
+  const ENEMY_SHOT_MAX_COUNT = 50;
+
+  /**
+   * 敵キャラクターのショットのインスタンスを格納する配列
+   * @type {Array<Shot>}
+   */
+  let enemyShotArray = [];
+
+  /**
    * 流れる星のインスタンスを格納する配列
    * @type {Array<BackgroundStar>}
    */
