@@ -15,6 +15,18 @@ export class Enemy extends CharacterBase {
     super(ctx, x, y, w, h, 0, imagePath);
 
     /**
+     * 自身のタイプ
+     * @type{string}
+     */
+    this.type = "default";
+
+    /**
+     * 自身が出現してからのフレーム数
+     * @type{number}
+     */
+    this.frame = 0;
+
+    /**
      * 自身の移動スピード
      * @type {number}
      */
