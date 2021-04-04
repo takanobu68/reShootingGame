@@ -182,6 +182,17 @@ export function createGame() {
     // playerにショットを設定する
     player.setShotArray(shotArray, slantingShotArray);
 
+    for (i = 0; i < ENEMY_SHOT_MAX_COUNT; i++) {
+      enemyShotArray[i] = new Shot(
+        ctx,
+        0,
+        0,
+        32,
+        32,
+        "../../assets/images/Vbom.png"
+      );
+    }
+
     // 敵キャラクターを初期化する
     for (i = 0; i < EMEMY_MAX_COUNT; i++) {
       enemyArray[i] = new Enemy(
