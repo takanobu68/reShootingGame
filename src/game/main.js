@@ -131,6 +131,9 @@ export function createGame() {
   function initialize() {
     let i;
 
+    // シーンを初期化する
+    scene = new SceneManager();
+
     // 自機キャラクターを初期化する
     player = new Player(ctx, 0, 0, 64, 64, "../../assets/images/player.png");
 
