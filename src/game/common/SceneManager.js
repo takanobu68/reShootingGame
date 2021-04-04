@@ -22,7 +22,7 @@ export class SceneManager {
      * 現在のシーンがアクティブになってからのシーンの実行回数
      * @type{number}
      */
-    this.frame = -1;
+    this.frame = null;
   }
 
   /**
