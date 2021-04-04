@@ -211,6 +211,8 @@ export function createGame() {
 
     // 全ての準備が完了したら次の処理に進む
     if (ready) {
+      // シーンを定義する
+      sceneSetting();
       // イベントを設定する
       eventSetting();
       // 実行開始時のタイムスタンプを取得する
